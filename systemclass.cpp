@@ -163,7 +163,7 @@ void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
 	m_hinstance = GetModuleHandle(NULL);
 
 	// Give the application a name.
-	m_applicationName = L"Engine";
+	m_applicationName = "OpenMoltke";
 
 	// Setup the windows class with default settings.
 	wc.style         = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
@@ -176,7 +176,7 @@ void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
 	wc.hCursor       = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	wc.lpszMenuName  = NULL;
-	wc.lpszClassName = reinterpret_cast<LPCSTR>(m_applicationName);
+	wc.lpszClassName = m_applicationName;
 	wc.cbSize        = sizeof(WNDCLASSEX);
 	
 	// Register the window class.
